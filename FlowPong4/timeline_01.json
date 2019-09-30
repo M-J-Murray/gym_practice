@@ -1,0 +1,322 @@
+{
+    "traceEvents": [
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 0,
+            "args": {
+                "name": "Allocators"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 1,
+            "args": {
+                "name": "/job:worker/replica:0/task:0/device:GPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 2,
+            "args": {
+                "name": "/job:worker/replica:0/task:0/device:GPU:0 Tensors"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 3,
+            "args": {
+                "name": "/job:worker/replica:0/task:0/device:CPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 4,
+            "args": {
+                "name": "/job:worker/replica:0/task:0/device:CPU:0 Tensors"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621317,
+            "dur": 14,
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621348,
+            "dur": 20,
+            "args": {
+                "name": "fc",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621373,
+            "dur": 10,
+            "args": {
+                "name": "Reshape/shape",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621386,
+            "dur": 13,
+            "args": {
+                "name": "conv3",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621402,
+            "dur": 10,
+            "args": {
+                "name": "conv2",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621415,
+            "dur": 10,
+            "args": {
+                "name": "conv1",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621431,
+            "dur": 10,
+            "args": {
+                "name": "fc/read",
+                "op": "Identity",
+                "input0": "fc"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621445,
+            "dur": 7,
+            "args": {
+                "name": "conv3/read",
+                "op": "Identity",
+                "input0": "conv3"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621456,
+            "dur": 9,
+            "args": {
+                "name": "conv2/read",
+                "op": "Identity",
+                "input0": "conv2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621468,
+            "dur": 7,
+            "args": {
+                "name": "conv1/read",
+                "op": "Identity",
+                "input0": "conv1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621478,
+            "dur": 164,
+            "args": {
+                "name": "Conv2D",
+                "op": "Conv2D",
+                "input0": "_recv_Placeholder_0_G65",
+                "input1": "conv1/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621647,
+            "dur": 25,
+            "args": {
+                "name": "Relu",
+                "op": "Relu",
+                "input0": "Conv2D"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621676,
+            "dur": 92,
+            "args": {
+                "name": "Conv2D_1",
+                "op": "Conv2D",
+                "input0": "Relu",
+                "input1": "conv2/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621772,
+            "dur": 24,
+            "args": {
+                "name": "Relu_1",
+                "op": "Relu",
+                "input0": "Conv2D_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621800,
+            "dur": 95,
+            "args": {
+                "name": "Conv2D_2",
+                "op": "Conv2D",
+                "input0": "Relu_1",
+                "input1": "conv3/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621899,
+            "dur": 24,
+            "args": {
+                "name": "Relu_2",
+                "op": "Relu",
+                "input0": "Conv2D_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Reshape",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621927,
+            "dur": 10,
+            "args": {
+                "name": "Reshape",
+                "op": "Reshape",
+                "input0": "Relu_2",
+                "input1": "Reshape/shape"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621942,
+            "dur": 40,
+            "args": {
+                "name": "MatMul",
+                "op": "MatMul",
+                "input0": "Reshape",
+                "input1": "fc/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Softmax",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1532559297621986,
+            "dur": 57,
+            "args": {
+                "name": "Softmax",
+                "op": "Softmax",
+                "input0": "MatMul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1532559297621273,
+            "dur": 12,
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            }
+        }
+    ]
+}
